@@ -1,0 +1,30 @@
+### Probe Module to use
+#probe-module ipv6_tcp_synscan
+probe-module ipv6_dns
+
+### Destination port to scan
+target-port 53
+
+### Scan rate in packets/sec
+rate 1
+
+### Scan rate in bandwidth (bits/sec); overrides `rate`
+#bandwidth 1M	# 1mbps
+
+
+### Blacklist file to use. We encourage you to exclude
+### RFC1918, IANA reserved, and multicast networks,
+### in addition to those who have opted out of your
+### network scans.
+#blacklist-file "/etc/zmap/blacklist.conf"
+
+### Optionally print a summary at the end
+#summary
+
+# Don't send packets, only print them
+#dryrun
+
+# IPv6
+#ipv6-source-ip "2001:a61:1239:3501:beae:c5ff:fe76:1110"
+ipv6-source-ip "2001:a61:1239:3501:dca0:d1ff:1bec:86a0"
+ipv6-target-file "conf/targets.txt"
